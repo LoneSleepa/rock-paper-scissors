@@ -3,6 +3,15 @@ const paper = 'paper';
 const scissors = 'scissors';
 const choice = [rock, paper, scissors];
 
+const playerSelection = rock;
+console.log(playerSelection);
+const computerSelection = getComputerChoice();
+const win = "Congrats! One point for you!";
+const lose = "Sorry, no point for you...";
+const tie = "Tie, reroll";
+
+
+
 function getComputerChoice() {
 const getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
 return getComputerChoice;
@@ -29,12 +38,27 @@ function playerRound (playerSelection, computerSelection) {
         }    
 }
 
-const playerSelection = rock;
-console.log(playerSelection);
-const computerSelection = getComputerChoice();
-const win = "Congrats! One point for you!";
-const lose = "Sorry, no point for you...";
-const tie = "Tie, reroll";
+
 
 playerRound(playerSelection, computerSelection);
 console.log(playerRound(playerSelection, computerSelection));
+
+let playerScore = 0;
+let computerScore = 0;
+console.log(playerScore);
+console.log(computerScore);
+
+function game() {
+    if (win) {
+        playerScore = playerScore++;
+        return playerScore++;
+    } else {
+        computerScore = ComputerScore++;
+        return computerScore++;
+    }
+    playerRound(playerSelection, computerSelection);
+}
+
+game();
+console.log(playerScore);
+console.log(computerScore);
