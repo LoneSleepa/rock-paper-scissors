@@ -41,11 +41,9 @@ let computerScore = 0;
 function game() {
     playerRound(playerSelection, computerSelection);
 
-    for (let i= 0; i < (playerScore === 5 || computerScore === 5); i++) {
+    for (let i= 0; i < (playerScore == 5); i++) {
         console.log(i);
     }
-
-
     if (playerSelection === rock &&  computerSelection === scissors) {
         playerScore += 1;
         console.log(playerScore);
@@ -77,4 +75,4 @@ game();
 console.log(playerScore);
 console.log(computerScore);
 console.log(playerSelection, computerSelection);
-console.log
+console.log(playerRound(playerSelection, computerSelection));
