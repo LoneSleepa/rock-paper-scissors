@@ -53,7 +53,7 @@ function game() {
         playerScore = playerScore++;
         return playerScore++;
     } else {
-        computerScore = ComputerScore++;
+        computerScore = computerScore++;
         return computerScore++;
     }
     playerRound(playerSelection, computerSelection);
