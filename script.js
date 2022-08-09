@@ -41,8 +41,19 @@ let computerScore = 0;
 function game() {
     playerRound(playerSelection, computerSelection);
 
-    for (let i= 0; i < (playerScore == 5); i++) {
+    for (let i= 0; i <  5; i++) {
         console.log(i);
+        if (playerScore == 5) {
+            const victory = "Time to celebrate. You WIN!!!";
+            victory;
+            console.log(victory);
+            return victory;
+        } else if (computerScore == 5) {
+            const defeat = "Sorry, you lost. Someone's laughing at you.";
+            defeat;
+            console.log(defeat);
+            return defeat;
+        }
     }
     if (playerSelection === rock &&  computerSelection === scissors) {
         playerScore += 1;
