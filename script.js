@@ -58,32 +58,7 @@ function game() {
             console.log(defeat);
             return defeat;
         }
-    }
-    if (playerSelection === rock &&  computerSelection === scissors) {
-        playerScore += 1;
-        console.log(playerScore);
-        return playerScore;
-    } else if (playerSelection === scissors && computerSelection === paper) {
-        playerScore += 1;
-        console.log(playerScore);
-        return playerScore;
-    } else if (playerSelection === paper && computerSelection === rock) {
-        playerScore += 1;
-        console.log(playerScore);
-        return playerScore;
-    } else if (playerSelection === paper && computerSelection === scissors) {
-        computerScore += 1;
-        console.log(computerScore);
-        return computerScore;
-    } else if (playerSelection === rock && computerSelection === paper) {
-        computerScore += 1;
-        console.log(computerScore);
-        return computerScore;
-    } else if (playerSelection === scissors && computerSelection === rock) {
-        computerScore += 1;
-        console.log(computerScore);
-        return computerScore;
-    }
+    }   
 }
 
 game();
