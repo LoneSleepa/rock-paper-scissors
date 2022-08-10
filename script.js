@@ -19,10 +19,13 @@ return getComputerChoice;
 
 function playerRound (playerSelection, computerSelection) {
     if (playerSelection === rock &&  computerSelection === scissors) {
+        playerScore += 1;
          return win;
         } else if (playerSelection === scissors && computerSelection === paper) {
+            playerScore += 1;
             return win;
         } else if (playerSelection === paper && computerSelection === rock) {
+            playerScore += 1;
            return win;
         } else if (playerSelection === rock && computerSelection === rock) {
            return tie;
@@ -31,6 +34,7 @@ function playerRound (playerSelection, computerSelection) {
         } else if (playerSelection === scissors && computerSelection === scissors) {
            return tie;
         } else {
+            computerScore += 1;
             return lose;            
         }    
 }
@@ -43,12 +47,12 @@ function game() {
 
     for (let i= 0; i <  5; i++) {
         console.log(i);
-        if (playerScore == 5) {
+        if (playerScore === 5) {
             const victory = "Time to celebrate. You WIN!!!";
             victory;
             console.log(victory);
             return victory;
-        } else if (computerScore == 5) {
+        } else if (computerScore === 5) {
             const defeat = "Sorry, you lost. Someone's laughing at you.";
             defeat;
             console.log(defeat);
