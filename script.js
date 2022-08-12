@@ -3,12 +3,16 @@ const paper = 'paper';
 const scissors = 'scissors';
 const choice = [rock, paper, scissors];
 
-const playerSelection = rock;
+const playerSelection = toLowerCase.getPlayerChoice();
 const computerSelection = getComputerChoice();
 const win = "Congrats! One point for you!";
 const lose = "Sorry, no point for you...";
 const tie = "Tie, reroll";
-const endgame = 5;
+
+function getPlayerChoice() {
+const = getPlayerChoice = prompt("Type rock, paper or scissors.");
+return getPlayerChoice;
+}
 
 function getComputerChoice() {
 const getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
