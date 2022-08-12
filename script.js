@@ -41,19 +41,18 @@ function playerRound (playerSelection, computerSelection) {
         } else {
             computerScore += 1;
             return lose;            
-        }    
+        }   
 }
 
 function game() {
     for (let i= 0; i <  5; i++) {
-        console.log(i);
         playerRound(playerSelection, computerSelection);
     }
-        if (playerScore > 5) {
+        if (playerScore > computerScore) {
             const victory = "Time to celebrate. You WIN!!!";
             console.log(victory);
             return victory;
-        } else if (computerScore > 5) {
+        } else if (computerScore > playerScore) {
             const defeat = "Sorry, you lost. Someone's laughing at you.";
             console.log(defeat);
             return defeat;
@@ -67,4 +66,3 @@ function game() {
 game();
 console.log(playerScore);
 console.log(computerScore);
-console.log(playerSelection, computerSelection);
