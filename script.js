@@ -13,18 +13,16 @@ let computerScore = 0;
 
 function getPlayerChoice() {
 let  getPlayerChoice = prompt("Type rock, paper or scissors.");
-console.log(getPlayerChoice);
 return getPlayerChoice;
 }
 function getComputerChoice() {
 let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
-console.log(getComputerChoice);
 return getComputerChoice;
 }
 
 function playerRound (playerSelection, computerSelection) {
     
-    let newPlayerSelection = getPlayerChoice();
+    let newPlayerSelection = getPlayerChoice().toLowerCase();
     let newComputerSelection = getComputerChoice();
     console.log(newPlayerSelection);
     console.log(newComputerSelection);
