@@ -3,7 +3,7 @@ const paper = 'paper';
 const scissors = 'scissors';
 const choice = [rock, paper, scissors];
 
-let playerSelection = getPlayerChoice().toLowerCase();
+let playerSelection = getPlayerChoice();
 let computerSelection = getComputerChoice();
 const win = "Congrats! One point for you!";
 const lose = "Sorry, no point for you...";
