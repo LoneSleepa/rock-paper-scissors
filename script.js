@@ -10,9 +10,10 @@ const lose = "Sorry, no point for you...";
 const tie = "Tie, reroll";
 
 function getPlayerChoice() {
-const = getPlayerChoice = prompt("Type rock, paper or scissors.");
+const  getPlayerChoice = prompt("Type rock, paper or scissors.");
 return getPlayerChoice;
 }
+console.log(getPlayerChoice());
 
 function getComputerChoice() {
 const getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
