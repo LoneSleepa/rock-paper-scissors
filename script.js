@@ -8,22 +8,21 @@ const computerSelection = getComputerChoice();
 const win = "Congrats! One point for you!";
 const lose = "Sorry, no point for you...";
 const tie = "Tie, reroll";
+let playerScore = 0;
+let computerScore = 0;
 
 function getPlayerChoice() {
 const  getPlayerChoice = prompt("Type rock, paper or scissors.");
 return getPlayerChoice;
 }
-console.log(getPlayerChoice);
-
 function getComputerChoice() {
 const getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
 return getComputerChoice;
 }
-console.log(getComputerChoice());
-
-
 
 function playerRound (playerSelection, computerSelection) {
+    getPlayerChoice();
+    getComputerChoice();
     if (playerSelection === rock &&  computerSelection === scissors) {
         playerScore += 1;
          return win;
@@ -45,30 +44,27 @@ function playerRound (playerSelection, computerSelection) {
         }    
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
 function game() {
-    playerRound(playerSelection, computerSelection);
-
     for (let i= 0; i <  5; i++) {
         console.log(i);
-        if (playerScore === 5) {
+        playerRound(playerSelection, computerSelection);
+    }
+        if (playerScore > 5) {
             const victory = "Time to celebrate. You WIN!!!";
-            victory;
             console.log(victory);
             return victory;
-        } else if (computerScore === 5) {
+        } else if (computerScore > 5) {
             const defeat = "Sorry, you lost. Someone's laughing at you.";
-            defeat;
             console.log(defeat);
             return defeat;
+        } else if (playerScore === computerScore) {
+            const draw = "None of you won neither lost the game! Care for a rematch?";
+            console.log(draw);
+            return draw;
         }
-    }   
 }
 
 game();
 console.log(playerScore);
 console.log(computerScore);
 console.log(playerSelection, computerSelection);
-console.log(playerRound(playerSelection, computerSelection));
