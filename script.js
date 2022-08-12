@@ -3,7 +3,7 @@ const paper = 'paper';
 const scissors = 'scissors';
 const choice = [rock, paper, scissors];
 
-let playerSelection = getPlayerChoice();
+let playerSelection = getPlayerChoice;
 let computerSelection = getComputerChoice();
 const win = "Congrats! One point for you!";
 const lose = "Sorry, no point for you...";
@@ -13,37 +13,41 @@ let computerScore = 0;
 
 function getPlayerChoice() {
 let  getPlayerChoice = prompt("Type rock, paper or scissors.");
+console.log(getPlayerChoice);
 return getPlayerChoice;
 }
 function getComputerChoice() {
 let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
+console.log(getComputerChoice);
 return getComputerChoice;
 }
 
 function playerRound (playerSelection, computerSelection) {
-    getPlayerChoice();
-    getComputerChoice();
-    console.log(playerSelection);
-    console.log(computerSelection);
-    if (playerSelection === rock &&  computerSelection === scissors) {
+    
+    let newPlayerSelection = getPlayerChoice();
+    let newComputerSelection = getComputerChoice();
+    console.log(newPlayerSelection);
+    console.log(newComputerSelection);
+
+    if (newPlayerSelection === rock &&  newComputerSelection === scissors) {
         playerScore += 1;
         console.log(win);
         return win;
-        } else if (playerSelection === scissors && computerSelection === paper) {
+        } else if (newPlayerSelection === scissors && newComputerSelection === paper) {
             playerScore += 1;
             console.log(win);
             return win;
-        } else if (playerSelection === paper && computerSelection === rock) {
+        } else if (newPlayerSelection === paper && newComputerSelection === rock) {
             playerScore += 1;
             console.log(win);
             return win;
-        } else if (playerSelection === rock && computerSelection === rock) {
+        } else if (newPlayerSelection === rock && newComputerSelection === rock) {
             console.log(tie);
            return tie;
-        } else if (playerSelection === paper && computerSelection === paper) {
+        } else if (newPlayerSelection === paper && newComputerSelection === paper) {
             console.log(tie);
            return tie;
-        } else if (playerSelection === scissors && computerSelection === scissors) {
+        } else if (newPlayerSelection === scissors && newComputerSelection === scissors) {
             console.log(tie);
            return tie;
         } else {
@@ -55,7 +59,6 @@ function playerRound (playerSelection, computerSelection) {
 
 function game() {
     for (let i= 0; i <  5; i++) {
-        console.log(i);
         playerRound(playerSelection, computerSelection);
         console.log(playerScore);
         console.log(computerScore);
