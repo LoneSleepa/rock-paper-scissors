@@ -11,19 +11,19 @@ const tie = "Tie, reroll";
 let playerScore = 0;
 let computerScore = 0;
 
-function getPlayerChoice() {
+function getPlayerChoice() { // request player's input 
 let  getPlayerChoice = prompt("Type rock, paper or scissors.");
 return getPlayerChoice;
 }
-function getComputerChoice() {
+function getComputerChoice() { // generates random pick for the CPU
 let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
 return getComputerChoice;
 }
 
-function playerRound (playerSelection, computerSelection) {
+function playerRound (playerSelection, computerSelection) { // the core of this project. Defines the game rules and its execution.
     
-    let newPlayerSelection = getPlayerChoice().toLowerCase();
-    let newComputerSelection = getComputerChoice();
+    let newPlayerSelection = getPlayerChoice().toLowerCase(); // 2 new variables so the previous values can share the same scope. 
+    let newComputerSelection = getComputerChoice(); // also chose `let` to make sure the variable can change values. 
     console.log(newPlayerSelection);
     console.log(newComputerSelection);
 
@@ -56,12 +56,12 @@ function playerRound (playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let i= 0; i <  5; i++) {
-        playerRound(playerSelection, computerSelection);
+    for (let i= 0; i <  5; i++) {   // The necessary loop so the game can run 5 times.
+        playerRound(playerSelection, computerSelection); 
         console.log(playerScore);
         console.log(computerScore);
     }
-        if (playerScore === computerScore) {
+        if (playerScore === computerScore) { // this block defines endgame results.
             const draw = "None of you won neither lost the game! Care for a rematch?";
             console.log(draw);
             return draw;        
