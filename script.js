@@ -1,20 +1,36 @@
-const rock = 'rock'
-const paper = 'paper';
-const scissors = 'scissors';
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors');
 const choice = [rock, paper, scissors];
+let playerScore = 0;
+let computerScore = 0;
+const buttons = document.querySelectorAll('.btn');
+
+const containerYou = document.querySelector('#you');
+let playScoreBox = document.createElement('div');
+playScoreBox.textContent = `${playerScore}`;
+containerYou.appendChild(playScoreBox);
+
+const containerCPU = document.querySelector('#CPU');
+let compScoreBox = document.createElement('div');
+compScoreBox.textContent = `${computerScore}`;
+containerCPU.appendChild(compScoreBox);
 
 let playerSelection = getPlayerChoice;
 let computerSelection = getComputerChoice();
 const win = "Congrats! One point for you!";
 const lose = "Sorry, no point for you...";
 const tie = "Tie, reroll";
-let playerScore = 0;
-let computerScore = 0;
 
-/*function getPlayerChoice() { // request player's input 
-let  getPlayerChoice = prompt("Type rock, paper or scissors.");
-return getPlayerChoice;
-}*/
+
+function getPlayerChoice() { // request player's input 
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            
+        })
+    })
+
+}
 function getComputerChoice() { // generates random pick for the CPU
 let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
 return getComputerChoice;
@@ -56,20 +72,16 @@ function playerRound (playerSelection, computerSelection) { // the core of this 
 }
 
 function game() {
-    for (let i= 0; i <  5; i++) {   // The necessary loop so the game can run 5 times.
+
         playerRound(playerSelection, computerSelection); 
         console.log(playerScore);
         console.log(computerScore);
-    }
-        if (playerScore === computerScore) { // this block defines endgame results.
-            const draw = "None of you won neither lost the game! Care for a rematch?";
-            console.log(draw);
-            return draw;        
-        } else if (playerScore > computerScore) {
+    
+        if (playerScore === 5) {
             const victory = "Time to celebrate. You WIN!!!";
             console.log(victory);
             return victory;
-        } else {
+        } else if (computerScore === 5) {
             const defeat = "Sorry, you lost. Someone's laughing at you.";
             console.log(defeat);
             return defeat;
