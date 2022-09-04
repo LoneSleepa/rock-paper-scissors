@@ -1,67 +1,67 @@
-const rock = document.querySelector('#rock')
-const paper = document.querySelector('#paper')
-const scissors = document.querySelector('#scissors');
+const rock = 'rock';
+const paper = 'paper';
+const scissors = 'scissors';
 const choice = [rock, paper, scissors];
+
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelectorAll('.btn');
-
 const containerYou = document.querySelector('#you');
 let playScoreBox = document.createElement('div');
 playScoreBox.textContent = `${playerScore}`;
 containerYou.appendChild(playScoreBox);
-
 const containerCPU = document.querySelector('#CPU');
 let compScoreBox = document.createElement('div');
 compScoreBox.textContent = `${computerScore}`;
 containerCPU.appendChild(compScoreBox);
 
-let playerSelection = getPlayerChoice;
 let computerSelection = getComputerChoice();
+function getComputerChoice() { // generates random pick for the CPU
+let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
+console.log(getComputerChoice);
+return getComputerChoice;
+}
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scisBtn = document.querySelector('#scissors');
+rockBtn.addEventListener('click', () => {
+    playerRound(rock, computerSelection);
+});
+paperBtn.addEventListener('click', () => {
+    playerRound(paper, computerSelection);
+});
+scisBtn.addEventListener('click', () => {
+    playerRound(scissors, computerSelection);
+});
+
 const win = "Congrats! One point for you!";
 const lose = "Sorry, no point for you...";
 const tie = "Tie, reroll";
 
 
-function getPlayerChoice() { // request player's input 
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            
-        })
-    })
-
-}
-function getComputerChoice() { // generates random pick for the CPU
-let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
-return getComputerChoice;
-}
 
 function playerRound (playerSelection, computerSelection) { // the core of this project. Defines the game rules and its execution.
     
-    let newPlayerSelection = getPlayerChoice().toLowerCase(); // 2 new variables so the previous values can share the same scope. 
     let newComputerSelection = getComputerChoice(); // also chose `let` to make sure the variable can change values. 
-    console.log(newPlayerSelection);
-    console.log(newComputerSelection);
 
-    if (newPlayerSelection === rock &&  newComputerSelection === scissors) {
+    if (playerSelection === rock &&  newComputerSelection === scissors) {
         playerScore += 1;
         console.log(win);
         return win;
-        } else if (newPlayerSelection === scissors && newComputerSelection === paper) {
+        } else if (playerSelection === scissors && newComputerSelection === paper) {
             playerScore += 1;
             console.log(win);
             return win;
-        } else if (newPlayerSelection === paper && newComputerSelection === rock) {
+        } else if (playerSelection === paper && newComputerSelection === rock) {
             playerScore += 1;
             console.log(win);
             return win;
-        } else if (newPlayerSelection === rock && newComputerSelection === rock) {
+        } else if (playerSelection === rock && newComputerSelection === rock) {
             console.log(tie);
            return tie;
-        } else if (newPlayerSelection === paper && newComputerSelection === paper) {
+        } else if (playerSelection === paper && newComputerSelection === paper) {
             console.log(tie);
            return tie;
-        } else if (newPlayerSelection === scissors && newComputerSelection === scissors) {
+        } else if (playerSelection === scissors && newComputerSelection === scissors) {
             console.log(tie);
            return tie;
         } else {
@@ -71,7 +71,7 @@ function playerRound (playerSelection, computerSelection) { // the core of this 
         }   
 }
 
-function game() {
+/*function game() {
 
         playerRound(playerSelection, computerSelection); 
         console.log(playerScore);
@@ -88,4 +88,4 @@ function game() {
         }
 }
 
-game();
+game();*/
