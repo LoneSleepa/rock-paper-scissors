@@ -17,12 +17,33 @@ h1 {
     font-size: 100px;
 }
 
-.introText {
+.simpleText {
     justify-content: center;
-    width: 900px;
-    padding: 2px;
+    width: auto;
+    margin: 80px 0 160px 0;
     align-self: center;
     text-align: center;
     font-size: 60px;
     color: rgb(82, 105, 125);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    font-family: "ArcadeClassic", sans-serif;
+    font-size: 60px;
+    border-radius: 30px;
+    border-color: rgb(82, 105, 125);
+    border: 2px solid;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    background-color: rgb(255, 240, 247);
+    color:rgb(82, 105, 125);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }

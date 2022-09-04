@@ -11,10 +11,10 @@ const tie = "Tie, reroll";
 let playerScore = 0;
 let computerScore = 0;
 
-function getPlayerChoice() { // request player's input 
+/*function getPlayerChoice() { // request player's input 
 let  getPlayerChoice = prompt("Type rock, paper or scissors.");
 return getPlayerChoice;
-}
+}*/
 function getComputerChoice() { // generates random pick for the CPU
 let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
 return getComputerChoice;
