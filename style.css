@@ -1,7 +1,12 @@
 @font-face {
     font-family: "ArcadeClassic" ;
     src: url(fonts/ARCADECLASSIC.TTF) format('truetype');
+}    
+@font-face {
+    font-family: "AppleII";
+    src: url(fonts/PrintChar21.ttf) format('truetype');
 }
+
 
 body {
     font-family: "ArcadeClassic", sans-serif;
@@ -46,4 +51,17 @@ button {
 button:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-content: center;
+    background-color: #282828;
+    font-family:"AppleII";
+    color: #33FF33;
+    width: 2000px;
+    height: 500px;
+    padding: 6px;
 }
