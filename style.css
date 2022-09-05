@@ -63,7 +63,55 @@ button:active {
     background-color: #282828;
     font-family:"AppleII";
     color: #33FF33;
-    width: 2000px;
-    height: 500px;
+    max-width: 2000px;
+    width: 100%;
+    max-height: 1000px;
+    height: 100%;
     padding: 6px;
+}
+
+.scoreTable {
+    display: flex;
+    justify-content: space-around;    
+}
+
+#you {
+    color:rgb(154, 24, 228);
+    font-size: 40px;
+}
+
+#CPU {
+    color:crimson;
+    font-size: 40px;
+}
+
+#youScore, #cpuScore {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.matchMsg {
+    margin-top: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#endMsg {
+    margin-top: 60px;
+    font-size: 50px;
+    text-align: center;
+}
+
+#reload {
+    margin-top: 10px;
+    font-size: 60px;
+    color: rgb(225, 255, 0);
+    text-align: center;
+}
+
+.credits {
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+    margin-top: 20px;
 }

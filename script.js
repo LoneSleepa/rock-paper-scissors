@@ -5,14 +5,10 @@ const choice = [rock, paper, scissors];
 
 let playerScore = 0;
 let computerScore = 0;
-const containerYou = document.querySelector('#you');
-const playScoreBox = document.createElement('div');
+const playScoreBox = document.querySelector('#youScore');
 playScoreBox.textContent = `${playerScore}`;
-containerYou.appendChild(playScoreBox);
-const containerCPU = document.querySelector('#CPU');
-const compScoreBox = document.createElement('div');
+const compScoreBox = document.querySelector('#cpuScore');
 compScoreBox.textContent = `${computerScore}`;
-containerCPU.appendChild(compScoreBox);
 
 let computerSelection = getComputerChoice();
 function getComputerChoice() { // generates random pick for the CPU
@@ -75,15 +71,13 @@ function playerRound (playerSelection, computerSelection) { // the core of this 
             result.textContent=lose;
 
         }
-        const finalScore = document.querySelector('#endMsg');
-        
+        const finalScore = document.querySelector('#endMsg');        
         if (playerScore === 5) {
-        const victory = "Time to celebrate. You WIN!!!";
+        const victory = "Time to celebrate. You WIN!!! Reload to play again.";
         finalScore.textContent = victory;
-         } else if (computerScore === 5) {
-        const defeat = "Sorry, you lost. Someone's laughing at you.";
-            finalScore.textContent = defeat;
-            console.log(finalScore.textContent);
+        } else if (computerScore === 5) {
+        const defeat = "Sorry, you lost. Someone's laughing at you. Reload to play again.";
+            finalScore.textContent = defeat;         
 };
 };        
         
