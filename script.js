@@ -76,7 +76,7 @@ function playerRound (playerSelection, computerSelection) { // the core of this 
         const victory = "Time to celebrate. You WIN!!! Reload to play again.";
         finalScore.textContent = victory;
         } else if (computerScore === 5) {
-        const defeat = "Sorry, you lost. Someone's laughing at you. Reload to play again.";
+        const defeat = "You lost. Someone's laughing at you. Reload to play again.";
             finalScore.textContent = defeat;         
 };
 };        
