@@ -93,7 +93,7 @@ function playerRound (playerSelection, computerSelection) { // the core of this 
         if (playerScore === 5) {
         const victory = "Time to celebrate. You WIN!!!";
         finalScore.textContent = victory;
-        setTimeout(resetGame, 4000);
+        setTimeout(resetGame, 2000);
 
         } else if (computerScore === 5) {
         const defeat = "You lost. Someone's laughing at you.";
