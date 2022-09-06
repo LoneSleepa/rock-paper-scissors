@@ -6,7 +6,7 @@ const win = "Congrats! One point for you!";
 const tie = "Tie, reroll";
 const lose = "Sorry, no point for you..."
 
-let playerScore = 0;
+let playerScore = 0;                            // sets the data for the score boxes
 let computerScore = 0;
 const playScoreBox = document.querySelector('#youScore');
 playScoreBox.textContent = `${playerScore}`;
@@ -18,7 +18,7 @@ function getComputerChoice() { // generates random pick for the CPU
 let getComputerChoice = choice[Math.floor(Math.random()*choice.length)];
 return getComputerChoice;
 }
-const rockBtn = document.querySelector('#rock');
+const rockBtn = document.querySelector('#rock');                // buttons function
 const paperBtn = document.querySelector('#paper');
 const scisBtn = document.querySelector('#scissors');
 
@@ -32,7 +32,7 @@ scisBtn.addEventListener('click', () => {
     playerRound(scissors, computerSelection);
 });
 
-function resetGame () {
+function resetGame () {                                 // allows automatic reset after 5 matches won.
     playerScore = 0;
     computerScore = 0;
     playScoreBox.textContent=`${playerScore}`;
